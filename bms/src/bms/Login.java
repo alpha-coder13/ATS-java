@@ -60,8 +60,8 @@ public class Login  extends JFrame implements ActionListener {
         clearButton.addActionListener(this);
         add(clearButton);
 
-        signUpButton = new JButton("clear");
-        signUpButton.setBounds(575, 240, 100 , 40);
+        signUpButton = new JButton("Sign Up");
+        signUpButton.setBounds(450, 300, 100 , 40);
         signUpButton.setBackground(Color.BLACK);
         signUpButton.setForeground(Color.white);
         signUpButton.addActionListener(this);
@@ -82,6 +82,8 @@ public class Login  extends JFrame implements ActionListener {
             pinText.setText("");
         }else if(ae.getSource() == signUpButton){
             // calls signup class
+            this.setVisible(false);
+            new SignUp();
         }
     }
     public static void main(String[] args){
