@@ -7,7 +7,7 @@ public class Connect {
     public Connect(){
         try{
             // registering the driver
-            c = DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem","root","1969");
+            c = DriverManager.getConnection("jdbc:mysql:///bms","root","1969");
             s = c.createStatement();
         } catch (Exception e) {
             System.out.println(e.getMessage());
