@@ -7,6 +7,7 @@ public class Connect {
     public Connect(){
         try{
             // registering the driver
+            String password = "";
             c = DriverManager.getConnection("jdbc:mysql:///bms","root","1969");
             s = c.createStatement();
         } catch (Exception e) {
