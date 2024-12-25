@@ -7,8 +7,8 @@ public class Connect {
     public Connect(){
         try{
             // registering the driver
-            String password = "";
-            c = DriverManager.getConnection("jdbc:mysql:///bms","root","1969");
+            Keys K = new Keys();
+            c = DriverManager.getConnection(K.url,K.usr,K.password);
             s = c.createStatement();
         } catch (Exception e) {
             System.out.println(e.getMessage());
