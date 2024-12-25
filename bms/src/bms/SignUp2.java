@@ -94,13 +94,22 @@ public class SignUp2 extends JFrame implements ActionListener {
             System.out.println(query);
             try {
                 c.s.executeUpdate(query);
+                setVisible(false);
+                new SignUp3(""+formNo).setVisible(true);
             }catch (Exception E){
+                String db_query_delete_2 = "delete from signup where form_no ="+formNo;
+                try{
+                    c.s.executeUpdate(db_query_delete_2);
+                    setVisible(false);
+                    new Login().setVisible(true);
+                }catch (Exception Ex){
+                    System.out.println("Delete Failed because of" + Ex.getMessage());
+                }
                 System.out.println(E.getMessage());
             }
         }
     }
 
     public static void main(String[] args){
-        new SignUp2(0);
     }
 }

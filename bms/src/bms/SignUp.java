@@ -101,12 +101,13 @@ public class SignUp extends JFrame implements ActionListener {
                 new SignUp2(random).setVisible(true);
                 setVisible(false);
             }catch (Exception E){
-                E.printStackTrace();
+                System.out.println("Delete Failed because of" + E.getMessage());
+                setVisible(false);
+                new Login().setVisible(true);
             }
         }
     }
 
     public static void main(String[] args){
-        new SignUp();
     }
 }
